@@ -74,7 +74,7 @@ class _MyAppState extends State<MyApp> {
                           style: TextStyle(
                             fontSize: 30,
                             fontWeight: .bold,
-                            color: Colors.black,
+
                           ),
                         ),
                         content: Text(
@@ -150,7 +150,7 @@ class _MyAppState extends State<MyApp> {
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: .bold,
-                                  color: Colors.black,
+
                                 ),
                               ),
                             ),
@@ -165,7 +165,7 @@ class _MyAppState extends State<MyApp> {
                                 style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: .bold,
-                                  color: Colors.black,
+
                                 ),
                               ),
                             ),
@@ -210,7 +210,7 @@ class _MyAppState extends State<MyApp> {
 
     Text(
       "Profile Screen",
-      style: TextStyle(color: Colors.black, fontWeight: .bold, fontSize: 23),
+      style: TextStyle( fontWeight: .bold, fontSize: 23),
     ),
   ];
   @override
@@ -223,7 +223,7 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Colors.teal.shade400,
           foregroundColor: Colors.white,
         ),
-        drawerTheme: DrawerThemeData(backgroundColor: Colors.deepPurple),
+
       ),
 
       darkTheme: ThemeData(
@@ -234,7 +234,7 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Colors.black,
           foregroundColor: Colors.white,
         ),
-        drawerTheme: DrawerThemeData(backgroundColor: Colors.black),
+
       ),
 
       themeMode: ThemeMode.system,
@@ -270,57 +270,40 @@ class _MyAppState extends State<MyApp> {
             ),
             iconTheme: IconThemeData(color: Colors.white),
           ),
-          drawer: Drawer(
-            child: ListView(
+          drawer: Drawer(child:
+            Column(
+              crossAxisAlignment: .start,
               children: [
-                Container(
-                  width: double.infinity,
-                  height: 200,
-                  color: Theme.of(context).drawerTheme.backgroundColor,
-                  child: Column(
-                    crossAxisAlignment: .start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          right: 170,
-                          top: 40,
-                          bottom: 15,
-                        ),
-                        child: CircleAvatar(
-                          backgroundColor: Colors.white,
-                          child: Icon(
-                            Icons.person,
-                            color: Colors.teal.shade400,
-                            size: 35,
-                          ),
-                          minRadius: 30,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20),
-                        child: Text(
-                          "Welcome User",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: .bold,
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                    ],
+                DrawerHeader(child:
+                CircleAvatar(
+                  backgroundColor: Colors.white,
+                  child: Icon(
+                    Icons.person,
+                    color: Colors.teal.shade400,
+                    size: 35,
+                  ),
+                  radius: 35,
+                ),
+
+
+                ),
+
+                Text(
+                  "Welcome User",
+                  style: TextStyle(
+
+                    fontWeight: .bold,
+                    fontSize: 20,
                   ),
                 ),
-                Container(
-                  height: 700,
-                  width: double.infinity,
-                    color:Theme.of(context).brightness == Brightness.dark
-                        ? Colors.white
-                        : Colors.black,
-                    child: ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text("Home"),
-                  ),
+
+                ListTile(
+
+
+                  leading: Icon(Icons.home),
+                  title: Text("Home"),
                 ),
+
               ],
             ),
           ),
